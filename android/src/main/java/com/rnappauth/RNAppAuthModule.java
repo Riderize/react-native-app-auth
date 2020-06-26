@@ -469,7 +469,7 @@ public class RNAppAuthModule extends ReactContextBaseJavaModule implements Activ
         if (tokenEndpointAuthMethod != null) {
             registrationRequestBuilder.setTokenEndpointAuthenticationMethod(tokenEndpointAuthMethod);
         }
-        
+
         RegistrationRequest registrationRequest = registrationRequestBuilder.build();
 
         AuthorizationService.RegistrationResponseCallback registrationResponseCallback = new AuthorizationService.RegistrationResponseCallback() {
@@ -500,11 +500,11 @@ public class RNAppAuthModule extends ReactContextBaseJavaModule implements Activ
             final Map<String, String> additionalParametersMap
     ) {
 
-        String scopesString = null;
+        // String scopesString = null;
 
-        if (scopes != null) {
-            scopesString = this.arrayToString(scopes);
-        }
+        // if (scopes != null) {
+        //     scopesString = this.arrayToString(scopes);
+        // }
 
         final Context context = this.reactContext;
         final Activity currentActivity = getCurrentActivity();
@@ -518,7 +518,7 @@ public class RNAppAuthModule extends ReactContextBaseJavaModule implements Activ
                 );
 
         if (scopesString != null) {
-            authRequestBuilder.setScope(scopesString);
+            authRequestBuilder.setScope(scopes);
         }
 
 
