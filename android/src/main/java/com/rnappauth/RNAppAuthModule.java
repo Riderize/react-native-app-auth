@@ -517,8 +517,8 @@ public class RNAppAuthModule extends ReactContextBaseJavaModule implements Activ
                         Uri.parse(redirectUrl)
                 );
 
-        if (scopesString != null) {
-            authRequestBuilder.setScope(scopes);
+        if (scopes != null) {
+            authRequestBuilder.setScopes((Iterable<String>) scopes);
         }
 
 
